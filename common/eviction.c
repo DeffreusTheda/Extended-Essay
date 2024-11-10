@@ -159,9 +159,9 @@ void evset_find(void* addr){
         Elem* can = NULL;
         int retries = 0;
         while(gt_eviction(&start, &can, addr)){
-            printf("finding eviction set failed!\n");
+            // printf("finding eviction set failed!\n");
             if(retries > 20){
-                printf("max retries exceeded!\n");
+                printf("max retries exceeded!\nmax retries exceeded!\n");
                 break;
             }
             // unmap memory chunk
@@ -173,9 +173,9 @@ void evset_find(void* addr){
             can = NULL;
             retries ++;
         }
-        if(retries < 20){
-            printf("Eviction set found!\n");
-        }
+        // if(retries < 20){
+            // printf("Eviction set found!\n");
+        // }
     
         // unmap memory that is no longer needed
         while(can){
