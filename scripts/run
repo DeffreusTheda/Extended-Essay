@@ -1,0 +1,28 @@
+#!/bin/sh
+
+cd $(dirname ${0})
+
+for VARIANT in 1 2; do
+  for CACHE in 0 1; do
+    for BITS in 1 2 4 8; do
+      for ITERATION in 1 2 4 8; do
+        for VICTIM_CALLS in 10 20 40 80; do
+          for TRAINING in 1 4 9 19; do
+            for I in {1..4}; do
+        			make clean >/dev/null
+        			clang -w -I. -I../common -lpthread -pthread -lm ../common/*.c *.c -o spectre \
+        				-DVARIANT=$VARIANT \
+        				-DCACHE=$CACHE \
+        				-DBITS=$BITS \
+        				-DITERATION=$ITERATION \
+        				-DVICTIM_CALLS=$VICTIM_CALLS \
+        				-DTRAINING=$TRAINING
+        			timeout 10 ./spectre
+              echo "$VARIANT-$CACHE-$BITS-$ITERATION-$VICTIM_CALLS-$TRAINING"
+            done
+          done
+        done
+      done
+    done
+  done
+done
