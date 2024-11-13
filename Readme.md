@@ -1,9 +1,15 @@
-# Branch Different - Spectre attacks on Apple silicon #
+# International Baccalaureate Diploma Program - Extended Essay (Computer Science)
+
+## An Analysis of Transient Execution CPU Vulnerability
+
+> How susceptible is Firestorm-M1 and Icestorm-M1 microarchitectures against Spectre Pattern History Table and Spectre Branch Target Buffer?
+
+See the extended essay [here](https://docs.google.com/document/d/1tniHXceWUjvTjvh8Rs5kx8cf3TvMBxwdHr3HIA7PSAI/edit?usp=sharing).
 
 <img src="logo.png" width="512" height="405">
 
-Code for Spectre V1 and V2 PoC and covert channel used in [the paper](https://misc0110.net/files/applespectre_dimva22.pdf).
 
+Code for Spectre V1 and V2 PoC and covert channel taken from the paper [Branch Different - Spectre attacks on Apple silicon](https://misc0110.net/files/applespectre_dimva22.pdf).
 
 ## Overview
 Each folder contains a `Readme.md` with additional documentation.
